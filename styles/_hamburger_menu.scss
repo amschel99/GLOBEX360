@@ -1,0 +1,89 @@
+@import 'theme';
+
+$hamburger-size: 2rem;
+$hamburger-color: #2D314D;
+
+@mixin menuToggle {
+  display: block;
+  // position: relative;
+
+  z-index: 0;
+
+  -webkit-user-select: none;
+  user-select: none;
+
+  input {
+    display: block;
+    width: $hamburger-size;
+    height: calc(3*(2px + 5px));
+    position: absolute; 
+  
+    cursor: pointer;
+  
+    opacity: 0;
+    z-index: 5;
+
+    $moveYLenght: 6.5px;
+  
+    -webkit-touch-callout: none;
+    &:checked ~ span {
+      opacity: 1;
+      transform: translateY($moveYLenght) rotate(45deg);
+      // transform: rotate(45deg);
+      &:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+      &:nth-last-child(2) {
+        transform: translateY(calc(-1 * #{$moveYLenght})) rotate(-45deg);
+      }
+    }
+    &:checked ~ ul {
+      transform: none;
+    }
+  }
+  span {
+    display: block;
+    width: $hamburger-size;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+  
+    background: $color-grayishBlue;
+    border-radius: 3px;
+
+    transform-origin: center;
+  
+    z-index: 4;
+    
+    transition: 
+      transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+      opacity 0.4s ease;
+  }
+}
+
+@mixin menu {
+  position: absolute;
+  width: 85vw;
+  left: calc((100vw - 85vw) / 2);
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-radius: 0.25rem;
+  z-index: 4;
+
+  background-color: $color-white;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(0, -150%);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  li {
+    text-align: center;
+    padding: 0.75rem;
+    &:hover {
+      background-color: $color-veryLightGray;
+    }
+  }
+}

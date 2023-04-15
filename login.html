@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLOBEX360 FOREX COMPANY Login</title>
+  <link rel="stylesheet" href="./styles/signup.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/IMG-20230201-WA0006-removebg.png">
+
+
+  <!-- Add Firebase libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+  <!-- Initialize Firebase -->
+  <script>
+    // Replace with your own Firebase config
+    var firebaseConfig = {
+      apiKey: "AIzaSyBHu9e5cuW4YGDhOseC5-8GAnRLvx_r2IM",
+      authDomain: "miles-auth-37380.firebaseapp.com",
+      projectId: "miles-auth-37380",
+      storageBucket: "miles-auth-37380.appspot.com",
+      messagingSenderId: "639435829172",
+      appId: "1:639435829172:web:f2350d86723986f2858ce1"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+
+<body>
+<nav class="navbar" id="nav-mobile" class="navbar" style="width: 90vw;" id="nav-mobile">
+  <a href="/">
+    <img src="./images/IMG-20230201-WA0006-removebg.png" width="50vw" alt="easybank logo">
+  </a>
+  <div id="menuToggle">
+
+    <input type="checkbox" name="menu" onchange="toggleCurtain(this)" />
+
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <ul id="menu">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+
+      <li><a href="./contacts.html">Contact</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./settings.html">FAQs</a></li>
+    </ul>
+  </div>
+</nav>
+<div id="curtain"></div>
+<nav class="navbar" id="nav-desktop">
+  <a href="/">
+    <img src="./images/IMG-20230201-WA0006-removebg.png" width='60vw' alt="easybank logo">
+  </a>
+  <ul>
+    <li style= "font-size: 18px;"><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contacts.html">Contact</a></li>
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./settings.html">FAQs</a></li>
+  </ul>
+  <a class="button" href="./signup.html">Register</a>
+  <a class="button" href="./login.html">Login</a>
+</nav>
+
+
+  <div  style=" width: 90vw; margin-left: 5vw;margin-right: 5vw;   margin-top: 150px;text-align: center;">
+    <h1>Login To Your GLOBEX360 FOREX COMPANY Account</h1>
+    <form>
+      <div class="form-group" style="width: 80%;">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group" style="width: 80%;">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button id="login-btn" type="submit">Login</button>
+      <h5 id="status"></h5>
+    </form>
+  </div>
+
+
+  
+  <!-- Add Firebase signup function -->
+  <script>
+    const loginForm = document.querySelector("form");
+    loginForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      document.getElementById("login-btn").disabled = true
+      const email = loginForm["email"].value;
+      const password = loginForm["password"].value;
+      try {
+        await firebase.auth().signInWithEmailAndPassword(email, password);
+        document.getElementById('status').textContent = 'Login Successful'
+        window.location.href = "./profile.html";
+        console.log("Login successful!");
+      } catch (error) {
+        document.getElementById('status').textContent = error.message
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+
+</html>

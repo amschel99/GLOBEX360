@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Servives</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/IMG-20230201-WA0006-removebg.png">
+
+  <style>
+    @media screen and (max-width: 450px) {
+      .container-blue{
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar" id="nav-mobile">
+  <a href="/">
+    <img src="./images/IMG-20230201-WA0006-removebg.png" width="50vw" alt="easybank logo">
+  </a>
+  <div id="menuToggle">
+
+    <input type="checkbox" name="menu" onchange="toggleCurtain(this)" />
+
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <ul id="menu">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+
+      <li><a href="./contacts.html">Contact</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./settings.html">FAQs</a></li>
+    </ul>
+  </div>
+</nav>
+<div id="curtain"></div>
+<nav class="navbar" id="nav-desktop">
+  <a href="/">
+    <img src="./images/IMG-20230201-WA0006-removebg.png" width='60vw' alt="easybank logo">
+  </a>
+  <ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contacts.html">Contact</a></li>
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./settings.html">FAQs</a></li>
+  </ul>
+  <a class="button" href="./signup.html">Register</a>
+  <a class="button" href="./login.html">Login</a>
+</nav>
+
+    <div class="container-grey" style="height:75vh">
+      <section id="why" class="wrapper">
+        <div class="section-header" >
+          <h2 >We Offer a wide range offer range of services</h2>
+          <p>
+            Maximizing Returns through Expert Forex Investment Management
+          </p>
+        </div>
+        <div class="section-content">
+          <div class="choices">
+            <img src="images/icon-online.svg" alt="hand with credit cards">
+            <h3>Investment Portfolio Management</h3>
+            <p>
+            Expertly crafted investment portfolios tailored to meet your financial goals and risk tolerance.
+            </p>
+          </div>
+          <div class="choices">
+            <img src="images/icon-budgeting.svg" alt="phone with dollar sign">
+            <h3>Market Analysis and Insights</h3>
+            <p>
+            Stay ahead of the game with our in-depth market analysis and insights, providing you with a clear understanding of
+            current trends and opportunities.
+            </p>
+          </div>
+          <div class="choices">
+            <img src="images/icon-onboarding.svg" alt="people communicating">
+            <h3>Trade Execution</h3>
+            <p>
+              Seamless and efficient trade execution, with a team of experienced traders executing trades on your behalf.
+            </p>
+          </div>
+          <div class="choices">
+            <img src="images/icon-api.svg" alt="a computer brain">
+            <h3>Risk Management</h3>
+            <p>
+            Protect your investments with our comprehensive risk management strategies, designed to minimize potential losses and
+            maximize returns.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+ 
+    <div style="position: relative; top: 100vh;" class="container-blue">
+      <footer class="wrapper wrapper-narrow">
+        <div class="footer-div-1">
+          <a class="logo" href="/"><img src="./images/IMG-20230201-WA0006-removebg.png" width='60vw' alt="easybank logo"></a>
+          <div class="social">
+            <a href="/"><img src="images/icon-facebook.svg" alt="facebook page link"></a>
+            <a href="/"><img src="images/icon-youtube.svg" alt="youtube page link"></a>
+            <a href="/"><img src="images/icon-twitter.svg" alt="twitter page link"></a>
+            <a href="/"><img src="images/icon-pinterest.svg" alt="pinterest page link"></a>
+            <a href="/"><img src="images/icon-instagram.svg" alt="instagram page link"></a>
+          </div>
+        </div>
+        <nav class="footer-div-2">
+          <ul>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contacts.html">Contact</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./settings.html">Settings</a></li>
+            <li><a href="./support.html">Support</a></li>
+            <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+          </ul>
+        </nav>
+        <div class="footer-div-3">
+          <a href="./signup.html" class="button">Register </a>
+          <p id="trademark">© GLOBEX360 FOREX COMPANY inc. All Rights Reserved</p>
+        </div>
+        <!-- <div class="attribution">
+          Coded with ❤ by <a href="https://github.com/rtmonteiro/">Ryan Monteiro</a>.
+          <br>
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        </div> -->
+      </footer>
+    </div>
+  
+
+
+
+</body>
+</html>
